@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout - SmartCare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">SmartCare<span>+</span></div>
+
+    <div class="search-box">
+        <input type="text" id="searchInput"
+        placeholder="Search medicines..."
+        onkeyup="searchProduct()">
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+    </nav>
+</header>
+
+<div class="checkout-container">
+
+    <div class="checkout-left">
+        <h2>Delivery Address</h2>
+
+        <input type="text" id="name" placeholder="Full Name">
+        <input type="text" id="phone" placeholder="Mobile Number">
+        <textarea id="address" placeholder="Full Address"></textarea>
+        <input type="text" id="city" placeholder="City">
+        <input type="text" id="pincode" placeholder="Pincode">
+
+        <h3>Payment Method</h3>
+        <select id="payment">
+            <option value="cod">Cash on Delivery</option>
+            <option value="upi">UPI</option>
+            <option value="card">Debit/Credit Card</option>
+        </select>
+
+        <button class="order-btn" onclick="confirmOrder()">CONFIRM ORDER</button>
+    </div>
+
+    <div class="checkout-right">
+        <h3>Order Summary</h3>
+        <div id="orderSummary"></div>
+        <h3 id="finalTotal"></h3>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

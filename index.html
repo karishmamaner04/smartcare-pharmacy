@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SmartCare Pharmacy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">SmartCare<span>+</span></div>
+
+    <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search medicines..." onkeyup="searchProduct()">
+</div>
+
+    <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+    <a href="#">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Your Health, Our Priority</h1>
+        <p>Order Medicines Online with Fast Delivery</p>
+        <button>Shop Now</button>
+    </div>
+
+    <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=600&q=80">
+    </div>
+</section>
+
+<section class="categories">
+    <div class="cat-card">Fever</div>
+    <div class="cat-card">Cold & Cough</div>
+    <div class="cat-card">Skin Care</div>
+    <div class="cat-card">Vitamins</div>
+</section>
+
+<section class="products-preview">
+
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=400&q=80">
+        <h3>Paracetamol</h3>
+        <p>₹50</p>
+    </div>
+
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=400&q=80">
+        <h3>Cough Syrup</h3>
+        <p>₹120</p>
+    </div>
+
+    <div class="product-card">
+        <img src="https://mycf.in/cdn/shop/files/61CkpoPHuzL._SL1000.jpg?v=1756119275&width=533">
+        <h3>Vitamin C</h3>
+        <p>₹199</p>
+    </div>
+
+</section>
+<footer>
+    <p>© 2026 SmartCare Pharmacy | All Rights Reserved</p>
+</footer>
+
+<div class="ai-button" onclick="toggleAI()">💬</div>
+
+<div class="ai-chatbox" id="aiBox">
+    <div class="ai-chatbox-header">SmartCare AI</div>
+    <div class="ai-chatbox-body" id="aiMessages"></div>
+    <input type="text" id="aiInput"
+    placeholder="Describe symptoms..."
+    onkeypress="if(event.key==='Enter') aiReply()">
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>

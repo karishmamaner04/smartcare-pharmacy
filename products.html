@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">SmartCare<span>+</span></div>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" 
+        placeholder="Search medicines..." 
+        onkeyup="searchProduct()">
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+    </nav>
+</header>
+<div class="filter-bar">
+    <button onclick="filterCategory('all')">All</button>
+    <button onclick="filterCategory('fever')">Fever</button>
+    <button onclick="filterCategory('cold')">Cold</button>
+    <button onclick="filterCategory('vitamin')">Vitamins</button>
+</div>
+<section class="products-preview">
+
+    <div class="product-card" data-category="fever">
+
+    
+        <img src="images/paracetamol.jpg">
+        <h3>Paracetamol</h3>
+        <p>₹50</p>
+        <button onclick="addToCart('Paracetamol',50,'images/paracetamol.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product-card" data-category="cold">
+
+    
+        <img src="images/cough.jpg">
+        <h3>Cough Syrup</h3>
+        <p>₹120</p>
+        <button onclick="addToCart('Cough Syrup',120,'images/cough.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product-card" data-category="vitamin">
+
+    
+        <img src="images/vitamin.jpg">
+        <h3>Vitamin C</h3>
+        <p>₹199</p>
+        <button onclick="addToCart('Vitamin C',199,'images/vitamin.jpg')">Add to Cart</button>
+    </div>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

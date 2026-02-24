@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">SmartCare<span>+</span></div>
+
+    <div class="search-box">
+        <input type="text" id="searchInput"
+        placeholder="Search medicines..."
+        onkeyup="searchProduct()">
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+    </nav>
+</header>
+
+<div class="cart-container">
+
+    <div class="cart-left" id="cartItems"></div>
+
+    <div class="cart-right">
+        <h3>Price Details</h3>
+        <p id="subtotal"></p>
+        <p id="delivery"></p>
+        <p id="discount"></p>
+        <hr>
+        <h3 id="grandTotal"></h3>
+        <button class="order-btn" onclick="window.location='checkout.html'">
+Proceed to Checkout
+</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
