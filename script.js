@@ -218,37 +218,25 @@ function aiReply(){
     messages.scrollTop=messages.scrollHeight;
 }function downloadExcel(){
 
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let orders = JSON.parse(localStorage.getItem("orders")) || [];
 
-  if(cart.length === 0){
-    alert("Cart is empty ❌");
+  if(orders.length === 0){
+    alert("No orders found ❌");
     return;
   }
 
   let csv = "Order ID,Product Name,Price,Date\n";
 
-  let orderId = "ORD" + Math.floor(Math.random()*10000);
-  let date = new Date().toLocaleDateString();
-
-  let total = 0;
-
-  cart.forEach(item => {
-    csv += orderId + "," + item.name + "," + item.price + "," + date + "\n";
-    total += item.price;
+  orders.forEach(item => {
+    csv += item.orderId + "," + item.name + "," + item.price + "," + item.date + "\n";
   });
-
-  // empty line
-  csv += "\n";
-
-  // total row
-  csv += " ,TOTAL," + total + ",\n";
 
   let blob = new Blob([csv], { type: "text/csv" });
   let url = window.URL.createObjectURL(blob);
 
   let a = document.createElement("a");
   a.href = url;
-  a.download = "SmartCare_Order.csv";
+  a.download = "SmartCare_All_Orders.csv";
   a.click();
 }
 function saveOrder(){
