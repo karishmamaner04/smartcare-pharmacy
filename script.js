@@ -217,3 +217,8 @@ function aiReply(){
     document.getElementById("aiInput").value="";
     messages.scrollTop=messages.scrollHeight;
 }
+function logout(){
+  localStorage.removeItem("user");
+  alert("Logged out ✅");
+  window.location.href = "login.html";
+}
