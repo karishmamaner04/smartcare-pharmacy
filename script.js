@@ -216,47 +216,4 @@ function aiReply(){
 
     document.getElementById("aiInput").value="";
     messages.scrollTop=messages.scrollHeight;
-}function downloadExcel(){
-
-  let orders = JSON.parse(localStorage.getItem("orders")) || [];
-
-  if(orders.length === 0){
-    alert("No orders found ❌");
-    return;
-  }
-
-  let csv = "Order ID,Product Name,Price,Date\n";
-
-  orders.forEach(item => {
-    csv += item.orderId + "," + item.name + "," + item.price + "," + item.date + "\n";
-  });
-
-  let blob = new Blob([csv], { type: "text/csv" });
-  let url = window.URL.createObjectURL(blob);
-
-  let a = document.createElement("a");
-  a.href = url;
-  a.download = "SmartCare_All_Orders.csv";
-  a.click();
-}
-function saveOrder(){
-
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  let orders = JSON.parse(localStorage.getItem("orders")) || [];
-
-  let orderId = "ORD" + Math.floor(Math.random()*10000);
-  let date = new Date().toLocaleDateString();
-
-  cart.forEach(item => {
-    orders.push({
-      orderId: orderId,
-      name: item.name,
-      price: item.price,
-      date: date
-    });
-  });
-
-  localStorage.setItem("orders", JSON.stringify(orders));
-
-  alert("Order Saved ✅");
 }
