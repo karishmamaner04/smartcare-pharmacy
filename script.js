@@ -251,3 +251,24 @@ function aiReply(){
   a.download = "SmartCare_Order.csv";
   a.click();
 }
+function saveOrder(){
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+  let orderId = "ORD" + Math.floor(Math.random()*10000);
+  let date = new Date().toLocaleDateString();
+
+  cart.forEach(item => {
+    orders.push({
+      orderId: orderId,
+      name: item.name,
+      price: item.price,
+      date: date
+    });
+  });
+
+  localStorage.setItem("orders", JSON.stringify(orders));
+
+  alert("Order Saved ✅");
+}
