@@ -1,132 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Products</title>
-    <link rel="stylesheet" href="style.css">
+  <title>Products</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="navbar">
-    <div class="logo">SmartCare<span>+</span></div>
+<h2 style="text-align:center;">Our Products</h2>
 
-    <div class="search-box">
-        <input type="text" id="searchInput" 
-        placeholder="Search medicines..." 
-        onkeyup="searchProduct()">
-    </div>
+<div class="products-container">
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
-    </nav>
-</header>
-<div class="filter-bar">
-    <button onclick="filterCategory('all')">All</button>
-    <button onclick="filterCategory('fever')">Fever</button>
-    <button onclick="filterCategory('cold')">Cold</button>
-    <button onclick="filterCategory('vitamin')">Vitamins</button>
+  <div class="product-card">
+    <img src="paracetamol.jpg">
+    <h3>Paracetamol</h3>
+    <p>₹50</p>
+    <button onclick="addToCart('Paracetamol',50,'paracetamol.jpg')">Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <img src="cough.jpg">
+    <h3>Cough Syrup</h3>
+    <p>₹120</p>
+    <button onclick="addToCart('Cough Syrup',120,'cough.jpg')">Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <img src="vitamin.jpg">
+    <h3>Vitamin C</h3>
+    <p>₹199</p>
+    <button onclick="addToCart('Vitamin C',199,'vitamin.jpg')">Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <img src="vicks.jpg">
+    <h3>Vicks</h3>
+    <p>₹120</p>
+    <button onclick="addToCart('Vicks',120,'vicks.jpg')">Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <img src="combiflam.jpg">
+    <h3>Combiflam</h3>
+    <p>₹80</p>
+    <button onclick="addToCart('Combiflam',80,'combiflam.jpg')">Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <img src="digene.jpg">
+    <h3>Digene</h3>
+    <p>₹60</p>
+    <button onclick="addToCart('Digene',60,'digene.jpg')">Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <img src="gelusil.jpg">
+    <h3>Gelusil</h3>
+    <p>₹70</p>
+    <button onclick="addToCart('Gelusil',70,'gelusil.jpg')">Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <img src="multivitamin.jpg">
+    <h3>Multivitamin</h3>
+    <p>₹150</p>
+    <button onclick="addToCart('Multivitamin',150,'multivitamin.jpg')">Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <img src="zink.jpg">
+    <h3>Zinc</h3>
+    <p>₹110</p>
+    <button onclick="addToCart('Zinc',110,'zink.jpg')">Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <img src="ors.jpg">
+    <h3>ORS</h3>
+    <p>₹30</p>
+    <button onclick="addToCart('ORS',30,'ors.jpg')">Add to Cart</button>
+  </div>
+
 </div>
-<section class="products-preview">
-
-    <div class="product-card" data-category="fever">
-
-    
-        <img src="paracetamol.jpg">
-        <h3>Paracetamol</h3>
-        <p>₹50</p>
-        <button onclick="addToCart('Paracetamol',50,'paracetamol.jpg')">Add to Cart</button>
-    </div>
-
-    <div class="product-card" data-category="cold">
-
-    
-        <img src="cough.jpg">
-        <h3>Cough Syrup</h3>
-        <p>₹120</p>
-        <button onclick="addToCart('Cough Syrup',120,'cough.jpg')">Add to Cart</button>
-    </div>
-
-    <div class="product-card" data-category="vitamin">
-
-    
-        <img src="vitamin.jpg">
-        <h3>Vitamin C</h3>
-        <p>₹199</p>
-        <button onclick="addToCart('Vitamin C',199,'vitamin.jpg')">Add to Cart</button>
-    </div>
-
-</section>
 
 <script src="script.js"></script>
+
 </body>
-
 </html>
-<div class="product">
-  <img src="vicks.jpg">
-  <h3>Vicks</h3>
-  <p>₹120</p>
-  <button onclick="addToCart('Vicks',120,'vicks.jpg')">Add to Cart</button>
-</div>
-
-<div class="product">
-  <img src="paracetamol.jpg">
-  <h3>Paracetamol</h3>
-  <p>₹50</p>
-  <button onclick="addToCart('Paracetamol',50,'paracetamol.jpg')">Add to Cart</button>
-</div>
-
-<div class="product">
-  <img src="combiflam.jpg">
-  <h3>Combiflam</h3>
-  <p>₹80</p>
-  <button onclick="addToCart('Combiflam',80,'combiflam.jpg')">Add to Cart</button>
-</div>
-
-<div class="product">
-  <img src="cough.jpg">
-  <h3>Cough Syrup</h3>
-  <p>₹95</p>
-  <button onclick="addToCart('Cough Syrup',95,'cough.jpg')">Add to Cart</button>
-</div>
-
-<div class="product">
-  <img src="digene.jpg">
-  <h3>Digene</h3>
-  <p>₹60</p>
-  <button onclick="addToCart('Digene',60,'digene.jpg')">Add to Cart</button>
-</div>
-
-<div class="product">
-  <img src="gelusil.jpg">
-  <h3>Gelusil</h3>
-  <p>₹70</p>
-  <button onclick="addToCart('Gelusil',70,'gelusil.jpg')">Add to Cart</button>
-</div>
-
-<div class="product">
-  <img src="multivitamin.jpg">
-  <h3>Multivitamin</h3>
-  <p>₹150</p>
-  <button onclick="addToCart('Multivitamin',150,'multivitamin.jpg')">Add to Cart</button>
-</div>
-
-<div class="product">
-  <img src="vitamin.jpg">
-  <h3>Vitamin</h3>
-  <p>₹140</p>
-  <button onclick="addToCart('Vitamin',140,'vitamin.jpg')">Add to Cart</button>
-</div>
-
-<div class="product">
-  <img src="zink.jpg">
-  <h3>Zinc</h3>
-  <p>₹110</p>
-  <button onclick="addToCart('Zinc',110,'zink.jpg')">Add to Cart</button>
-</div>
-
-<div class="product">
-  <img src="ors.jpg">
-  <h3>ORS</h3>
-  <p>₹30</p>
-  <button onclick="addToCart('ORS',30,'ors.jpg')">Add to Cart</button>
-</div>
