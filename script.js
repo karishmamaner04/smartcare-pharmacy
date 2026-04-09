@@ -225,17 +225,29 @@ function aiReply(){
     return;
   }
 
-  let csv = "Product Name,Price\n";
+  let csv = "Order ID,Product Name,Price,Date\n";
+
+  let orderId = "ORD" + Math.floor(Math.random()*10000);
+  let date = new Date().toLocaleDateString();
+
+  let total = 0;
 
   cart.forEach(item => {
-    csv += item.name + "," + item.price + "\n";
+    csv += orderId + "," + item.name + "," + item.price + "," + date + "\n";
+    total += item.price;
   });
+
+  // empty line
+  csv += "\n";
+
+  // total row
+  csv += " ,TOTAL," + total + ",\n";
 
   let blob = new Blob([csv], { type: "text/csv" });
   let url = window.URL.createObjectURL(blob);
 
   let a = document.createElement("a");
   a.href = url;
-  a.download = "cart_data.csv";
+  a.download = "SmartCare_Order.csv";
   a.click();
 }
