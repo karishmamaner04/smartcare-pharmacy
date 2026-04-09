@@ -216,4 +216,26 @@ function aiReply(){
 
     document.getElementById("aiInput").value="";
     messages.scrollTop=messages.scrollHeight;
+}function downloadExcel(){
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  if(cart.length === 0){
+    alert("Cart is empty ❌");
+    return;
+  }
+
+  let csv = "Product Name,Price\n";
+
+  cart.forEach(item => {
+    csv += item.name + "," + item.price + "\n";
+  });
+
+  let blob = new Blob([csv], { type: "text/csv" });
+  let url = window.URL.createObjectURL(blob);
+
+  let a = document.createElement("a");
+  a.href = url;
+  a.download = "cart_data.csv";
+  a.click();
 }
