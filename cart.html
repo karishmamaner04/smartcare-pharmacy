@@ -43,4 +43,9 @@ Proceed to Checkout
 <script src="script.js"></script>
     
 </body>
+    <script>
+if(!localStorage.getItem("user")){
+  window.location.href = "login.html";
+}
+</script>
 </html>
