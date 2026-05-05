@@ -222,3 +222,29 @@ function logout(){
   alert("Logged out ✅");
   window.location.href = "login.html";
 }
+function downloadOrdersExcel(){
+
+    let orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+    if(orders.length === 0){
+        alert("No orders found");
+        return;
+    }
+
+    let csv = "Order Date,Product Name,Quantity,Price,Total\n";
+
+    orders.forEach(order => {
+
+        order.items.forEach(item => {
+            csv += `${order.date},${item.name},${item.qty},${item.price},${item.price * item.qty}\n`;
+        });
+
+    });
+
+    let blob = new Blob([csv], { type: 'text/csv' });
+
+    let link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "SmartCare_Orders.csv";
+    link.click();
+}
