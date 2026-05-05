@@ -122,11 +122,11 @@ function confirmOrder(){
 
     let orders = JSON.parse(localStorage.getItem("orders")) || [];
 
-    orders.push({
-        items: cart,
-        total: document.getElementById("finalTotal").innerText,
-        date: new Date().toLocaleString()
-    });
+   orders.push({
+    items: cart,
+    total: document.getElementById("finalTotal").innerText,
+    date: new Date().toLocaleString()
+});
 
     localStorage.setItem("orders", JSON.stringify(orders));
     localStorage.removeItem("cart");
