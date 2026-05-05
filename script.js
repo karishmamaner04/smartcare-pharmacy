@@ -235,8 +235,10 @@ function downloadOrdersExcel(){
 
     orders.forEach(order => {
 
+        let orderDate = order.date || "No Date";
+
         order.items.forEach(item => {
-            csv += `${order.date},${item.name},${item.qty},${item.price},${item.price * item.qty}\n`;
+            csv += `"${orderDate}","${item.name}",${item.qty},${item.price},${item.price * item.qty}\n`;
         });
 
     });
